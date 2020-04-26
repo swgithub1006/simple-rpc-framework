@@ -13,13 +13,13 @@
  */
 package com.github.liyue2008.rpc.transport.netty;
 
+import java.nio.charset.StandardCharsets;
+
 import com.github.liyue2008.rpc.transport.command.Header;
 import com.github.liyue2008.rpc.transport.command.ResponseHeader;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.handler.codec.MessageToByteEncoder;
-
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author LiYue

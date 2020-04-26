@@ -18,29 +18,31 @@ import com.github.liyue2008.rpc.transport.command.Command;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * @author LiYue
- * Date: 2019/9/20
+ * @author LiYue Date: 2019/9/20
  */
 public class ResponseFuture {
-    private final int requestId;
-    private final CompletableFuture<Command> future;
-    private final long timestamp;
 
-    public ResponseFuture(int requestId, CompletableFuture<Command> future) {
-        this.requestId = requestId;
-        this.future = future;
-        timestamp = System.nanoTime();
-    }
+	private final int requestId;
 
-    public int getRequestId() {
-        return requestId;
-    }
+	private final CompletableFuture<Command> future;
 
-    public CompletableFuture<Command> getFuture() {
-        return future;
-    }
+	private final long timestamp;
 
-    long getTimestamp() {
-        return timestamp;
-    }
+	public ResponseFuture(int requestId, CompletableFuture<Command> future) {
+		this.requestId = requestId;
+		this.future = future;
+		timestamp = System.nanoTime();
+	}
+
+	public int getRequestId() {
+		return requestId;
+	}
+
+	public CompletableFuture<Command> getFuture() {
+		return future;
+	}
+
+	long getTimestamp() {
+		return timestamp;
+	}
 }

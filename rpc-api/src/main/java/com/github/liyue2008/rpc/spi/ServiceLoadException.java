@@ -14,8 +14,12 @@
 package com.github.liyue2008.rpc.spi;
 
 /**
- * @author LiYue
- * Date: 2019-03-20
+ * @author LiYue Date: 2019-03-20
  */
 public class ServiceLoadException extends RuntimeException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8588571610643596014L;
 }

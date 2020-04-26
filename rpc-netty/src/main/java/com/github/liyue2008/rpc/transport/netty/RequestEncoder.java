@@ -18,12 +18,13 @@ import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 
 /**
- * @author LiYue
- * Date: 2019/9/20
+ * @author LiYue Date: 2019/9/20
  */
 public class RequestEncoder extends CommandEncoder {
-    @Override
-    protected void encodeHeader(ChannelHandlerContext channelHandlerContext, Header header, ByteBuf byteBuf) throws Exception {
-        super.encodeHeader(channelHandlerContext, header, byteBuf);
-    }
+	
+	@Override
+	protected void encodeHeader(ChannelHandlerContext channelHandlerContext, Header header, ByteBuf byteBuf)
+			throws Exception {
+		super.encodeHeader(channelHandlerContext, header, byteBuf);
+	}
 }

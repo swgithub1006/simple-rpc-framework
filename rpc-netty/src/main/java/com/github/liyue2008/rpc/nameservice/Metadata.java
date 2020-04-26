@@ -24,7 +24,12 @@ import java.util.List;
  */
 public class Metadata extends HashMap<String /*服务名*/, List<URI>/*服务提供者URI列表*/> {
 
-    @Override
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5456419992406842716L;
+
+	@Override
     public String toString() {
         StringBuilder sb = new StringBuilder("Metadata:").append("\n");
         for (Entry<String, List<URI>> entry : entrySet()) {

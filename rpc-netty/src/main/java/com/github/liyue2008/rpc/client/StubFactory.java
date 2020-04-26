@@ -16,9 +16,10 @@ package com.github.liyue2008.rpc.client;
 import com.github.liyue2008.rpc.transport.Transport;
 
 /**
- * @author LiYue
- * Date: 2019/9/27
+ * @author LiYue Date: 2019/9/27
  */
 public interface StubFactory {
-    <T> T createStub(Transport transport, Class<T> serviceClass);
+
+	<T> T createStub(Transport transport, Class<T> serviceClass);
+
 }

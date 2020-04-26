@@ -22,30 +22,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author LiYue
- * Date: 2019/9/23
+ * @author LiYue Date: 2019/9/23
  */
 public class RequestHandlerRegistry {
-    private static final Logger logger = LoggerFactory.getLogger(RequestHandlerRegistry.class);
-    private Map<Integer, RequestHandler> handlerMap = new HashMap<>();
-    private static RequestHandlerRegistry instance = null;
-    public static RequestHandlerRegistry getInstance() {
-        if (null == instance) {
-            instance = new RequestHandlerRegistry();
-        }
-        return instance;
-    }
 
-    private RequestHandlerRegistry() {
-        Collection<RequestHandler> requestHandlers = ServiceSupport.loadAll(RequestHandler.class);
-        for (RequestHandler requestHandler : requestHandlers) {
-            handlerMap.put(requestHandler.type(), requestHandler);
-            logger.info("Load request handler, type: {}, class: {}.", requestHandler.type(), requestHandler.getClass().getCanonicalName());
-        }
-    }
+	private static final Logger logger = LoggerFactory.getLogger(RequestHandlerRegistry.class);
 
+	private Map<Integer, RequestHandler> handlerMap = new HashMap<>();
 
-    public RequestHandler get(int type) {
-        return handlerMap.get(type);
-    }
+	private static RequestHandlerRegistry instance = null;
+
+	public static RequestHandlerRegistry getInstance() {
+		if (null == instance) {
+			instance = new RequestHandlerRegistry();
+		}
+		return instance;
+	}
+
+	private RequestHandlerRegistry() {
+		Collection<RequestHandler> requestHandlers = ServiceSupport.loadAll(RequestHandler.class);
+		for (RequestHandler requestHandler : requestHandlers) {
+			handlerMap.put(requestHandler.type(), requestHandler);
+			logger.info("Load request handler, type: {}, class: {}.", requestHandler.type(),
+					requestHandler.getClass().getCanonicalName());
+		}
+	}
+
+	public RequestHandler get(int type) {
+		return handlerMap.get(type);
+	}
 }
