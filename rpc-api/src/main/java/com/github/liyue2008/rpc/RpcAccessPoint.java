@@ -25,8 +25,9 @@ import java.util.Collection;
  * Date: 2019/9/20
  */
 public interface RpcAccessPoint extends Closeable{
-    /**
-     * 客户端获取远程服务的引用
+	
+    /**客户端获取远程服务的引用
+     * 
      * @param uri 远程服务地址
      * @param serviceClass 服务的接口类的Class
      * @param <T> 服务接口的类型
@@ -34,8 +35,8 @@ public interface RpcAccessPoint extends Closeable{
      */
     <T> T getRemoteService(URI uri, Class<T> serviceClass);
 
-    /**
-     * 服务端注册服务的实现实例
+    /**服务端注册服务的实现实例
+     * 
      * @param service 实现实例
      * @param serviceClass 服务的接口类的Class
      * @param <T> 服务接口的类型
@@ -43,8 +44,8 @@ public interface RpcAccessPoint extends Closeable{
      */
     <T> URI addServiceProvider(T service, Class<T> serviceClass);
 
-    /**
-     * 获取注册中心的引用
+    /**获取注册中心的引用
+     * 
      * @param nameServiceUri 注册中心URI
      * @return 注册中心引用
      */
@@ -59,8 +60,8 @@ public interface RpcAccessPoint extends Closeable{
         return null;
     }
 
-    /**
-     * 服务端启动RPC框架，监听接口，开始提供远程服务。
+    /**服务端启动RPC框架，监听接口，开始提供远程服务。
+     * 
      * @return 服务实例，用于程序停止的时候安全关闭服务。
      */
     Closeable startServer() throws Exception;

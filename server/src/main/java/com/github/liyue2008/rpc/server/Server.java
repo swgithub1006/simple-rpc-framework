@@ -29,9 +29,10 @@ import java.net.URI;
  * Date: 2019/9/20
  */
 public class Server {
+	
     private static final Logger logger = LoggerFactory.getLogger(Server.class);
+    
     public static void main(String [] args) throws Exception {
-
         String serviceName = HelloService.class.getCanonicalName();
         File tmpDirFile = new File(System.getProperty("java.io.tmpdir"));
         File file = new File(tmpDirFile, "simple_rpc_name_service.data");
